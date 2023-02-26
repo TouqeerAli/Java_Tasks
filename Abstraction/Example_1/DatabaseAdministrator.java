@@ -1,9 +1,27 @@
 class DatabaseAdministrator extends Employee{
-	public void salary(int sal){
-		System.out.println("Salary of Database Administrator is "+ sal);
+	String fname;
+	String email;
+	String phoneNo;
+	String address;
+	String specialization;
+	
+	DatabaseAdministrator(String fname, String email,String phoneNo,String address,String specialization){
+		this.fname=fname;
+		this.email=email;
+		this.phoneNo=phoneNo;
+		this.address=address;
+		this.specialization=specialization;
+	}
+	public void getEmployeeInfo(){
+		System.out.println("Full Name : "+fname);
+		System.out.println("Email : "+email);
+		System.out.println("Phone No. :"+phoneNo);
+		System.out.println("Address : "+address);
+		System.out.println("Specialization : "+specialization);
 	}
 	public static void main(String []args){
-		DatabaseAdministrator emp1 = new DatabaseAdministrator();
-		emp1.salary(50000);
+		SoftwareDeveloper emp1 = new SoftwareDeveloper("Amir Jamali","amirali123@gmail.com",
+								"012345678","Muet Jamshoro","Mysql");
+		emp1.getEmployeeInfo();
 	}
 }
