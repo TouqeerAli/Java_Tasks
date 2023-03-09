@@ -1,7 +1,7 @@
 interface Shape{
 	void printLine(String s);
 }
-public class Main{
+public class Main implements interface{
 	void printLine(String s){
 		int i=1;
 		while(i<=10){
