@@ -102,13 +102,16 @@ public class Account {
 		int acc = Integer.parseInt(accNo);
 		if(acc<0) {
 			throw new NegativeNumberException("Account No can not be negative.");
+			
 		}
 		}catch(NumberFormatException e) {
 			System.out.println("Account No can not contain characters");
 			System.out.println("Try again!!");
+			temp=true;
 			temp2=false;
 		}catch(NegativeNumberException e) {
 			System.out.println(e.getMessage());
+			temp=true;
 			temp2=false;
 		}
 		acc.setAccountNo(accNo);

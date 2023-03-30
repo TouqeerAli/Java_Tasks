@@ -1,14 +1,13 @@
 import java.util.Scanner;
 
 public class Manu{
-	
+	int choice;
 	
 	static Scanner sc2 = new Scanner(System.in);
 	Account acc = new Account();
 	boolean temp1=true;
 	
 	boolean temp3;
-	int choice;
 	public void showManu(){
 	System.out.println("******* Welcome to Cash Deposit Machine *******");
 	
