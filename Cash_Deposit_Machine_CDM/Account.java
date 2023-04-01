@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Account {
-	static Scanner sc1 = new Scanner(System.in);
-	static Account acc = new Account();
+	Scanner sc1 = new Scanner(System.in);
+	
 	private String name;
 	private String cnic;
 	private int pin;
@@ -53,12 +53,8 @@ public class Account {
 		this.email = email;
 	}
 	
-	public void addAmount(int amt) {
-		this.amount+=amt;
-		
-		System.out.println("Your account has been credit with "+amt+" under A/C "+acc.getAccountNo());
-	}
-	public void createAccount() {
+	
+	public void createAccount(Account acc) {
 		System.out.print("Enter your name: ");
 		this.name=sc1.next();
 		acc.setName(this.name);
@@ -91,16 +87,17 @@ public class Account {
 		}
 	}
 	
-	public void depositCash() {
+	public void depositCash(Account acc) {
 		boolean temp=true;
 		while(temp) {
 			boolean temp2=true;
+			boolean temp3=true;
 		System.out.print("Enter account No: ");
 		String accNo =sc1.next();
 		
 		try {
-		int acc = Integer.parseInt(accNo);
-		if(acc<0) {
+		int accNo2 = Integer.parseInt(accNo);
+		if(accNo2<0) {
 			throw new NegativeNumberException("Account No can not be negative.");
 			
 		}
@@ -109,20 +106,24 @@ public class Account {
 			System.out.println("Try again!!");
 			temp=true;
 			temp2=false;
+			temp3=false;
 		}catch(NegativeNumberException e) {
 			System.out.println(e.getMessage());
 			temp=true;
 			temp2=false;
+			temp3=false;
 		}
 		acc.setAccountNo(accNo);
-		if(accNo.length()>=8) {
+		 if(accNo.length()<8 && temp2==true) {
+				System.out.println("Account No should be atlest of 8 digits.");
+				System.out.println("Try again!!");
+				
+		 }else if(accNo.length()>=8 && temp3==true) {
 			temp=false;
 			
-		}else if(accNo.length()<8 && temp2==true) {
-			System.out.println("Account No should be atlest of 8 digits.");
-			System.out.println("Try again!!");
-			
 		}
+			
+		
 		}
 		System.out.print("Enter phone No: ");
 		String ph =sc1.next();
@@ -130,17 +131,17 @@ public class Account {
 		System.out.print("Enter amount: ");
 		int amt =sc1.nextInt();
 		
-		acc.addAmount(amt);
-		
+		this.amount+=amt;
+		System.out.println("Your account has been credit with "+amt+" under A/C "+acc.getAccountNo());
 		
 		
 	}
 	
 	//balance inquiry_______________________________
-	public void balanceInquiry() {
+	public void balanceInquiry(Account acc) {
 		System.out.println("Your current balance is  :"+acc.getAmount());
 	}
-	public void getProfile() {
+	public void getProfile(Account acc) {
 		System.out.println("---------------------------------------");
 		System.out.println("		Your Profile		");
 		System.out.println("Name			:	"+acc.getName());

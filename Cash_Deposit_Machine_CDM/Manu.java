@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Manu{
 	int choice;
 	
-	static Scanner sc2 = new Scanner(System.in);
-	Account acc = new Account();
+	Scanner sc2 = new Scanner(System.in);
+	
 	boolean temp1=true;
 	
 	boolean temp3;
-	public void showManu(){
+	public void showManu(Account acc){
 	System.out.println("******* Welcome to Cash Deposit Machine *******");
 	
 	while(temp1) {
@@ -27,7 +27,7 @@ public class Manu{
 			System.out.println("Account already created, now login");
 			temp2=false;
 		}else {
-		acc.createAccount();
+		acc.createAccount(acc);
 		temp2=false;
 		}
 	}else if(choice==2) {
@@ -44,7 +44,7 @@ public class Manu{
 	}
 	}
 	
-	public void showRemainingManu() {
+	public void showRemainingManu(Account acc) {
 		boolean temp=true;
 		do{
 	System.out.println();
@@ -58,17 +58,17 @@ public class Manu{
 	switch(choice) {
 	case 1:
 	{
-		acc.depositCash();
+		acc.depositCash(acc);
 		break;
 	}
 	case 2:
 	{
-		acc.balanceInquiry();
+		acc.balanceInquiry(acc);
 		break;
 	}
 	case 3:
 	{
-		acc.getProfile();
+		acc.getProfile(acc);
 		break;
 	}
 	case 4:
