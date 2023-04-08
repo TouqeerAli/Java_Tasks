@@ -2,8 +2,8 @@ public class TraficLights implements Runnable{
 
 	@Override
 	public void run() {
-		
-			System.out.println("Red - STOP");
+			System.out.println("Yellow - WAIT (Red lght is going to be start)");
+			
 			for(int i=1; i<=3; i++) {
 				System.out.print (i+" ");
 			try {
@@ -14,7 +14,7 @@ public class TraficLights implements Runnable{
 			}
 			
 			}
-			System.out.println("\nYellow - WAIT (Red lght is going to be start)");
+			System.out.println("\nRed - STOP");
 			for(int i=1; i<=3; i++) {
 				System.out.print(i+" ");
 			try {
