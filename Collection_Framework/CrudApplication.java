@@ -3,15 +3,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CrudApplication {
-	static Scanner sc = new Scanner(System.in);
+	
 
 	public static void main(String[] args) {
+		
 		List<Employee> empList = new ArrayList<Employee>();
-		Employee emp[] = new Employee[empList.size() + 10];
-		int i = 0;
-		emp[i] = new Employee();
 		boolean exit = true;
 		while (exit) {
+			Scanner sc = new Scanner(System.in);
 			System.out.println("\n===========Welcome to Employees Data===========");
 			System.out.println("1- Add Employee");
 			System.out.println("2- Update Employee");
@@ -26,13 +25,11 @@ public class CrudApplication {
 			switch (ch) {
 			case 1: {
 
-				crud.addEmp(emp, i, empList);
-				i++;
-				emp[i] = new Employee();
+				crud.addEmp(empList);
 				break;
 			}
 			case 2: {
-				crud.updateEmp(emp, empList);
+				crud.updateEmp(empList);
 				break;
 			}
 			case 3: {
@@ -50,6 +47,7 @@ public class CrudApplication {
 			case 6: {
 				System.out.println("*****Thank you*****");
 				exit = false;
+				sc.close();
 				break;
 			}
 			default: {
@@ -58,51 +56,56 @@ public class CrudApplication {
 			}
 
 		}
-
+		
 	}
 
-	public void addEmp(Employee emp[], int i, List<Employee> empList) {
+	public void addEmp(List<Employee> empList) {
+		Scanner sc = new Scanner(System.in);
+		Employee emp = new Employee();
 		System.out.print("Enter Employee name : ");
-		emp[i].setName(sc.next());
+		emp.setName(sc.next());
 		System.out.print("\nEnter Employee id : ");
-		emp[i].setId(sc.nextInt());
+		emp.setId(sc.nextInt());
 		System.out.print("\nEnter Employee salary : ");
-		emp[i].setSalary(sc.nextInt());
+		emp.setSalary(sc.nextInt());
 		System.out.print("\nEnter Employee age : ");
-		emp[i].setAge(sc.nextInt());
+		emp.setAge(sc.nextInt());
 		sc.nextLine();
 		System.out.println("\nEnter Employee email : ");
-		emp[i].setEmail(sc.nextLine());
-		empList.add(emp[i]);
-
+		emp.setEmail(sc.nextLine());
+		empList.add(emp);
+		
+	
 	}
 
-	public void updateEmp(Employee emp[], List<Employee> empList) {
-
+	public void updateEmp(List<Employee> empList) {
+		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter Employee id (To update records) : ");
 		Integer tempId = sc.nextInt();
 		for (int j = 0; j < empList.size(); j++) {
 			if (empList.get(j).getId() == tempId) {
+				Employee emp = empList.get(j);
 				System.out.print("Enter Employee name : ");
-				emp[j].setName(sc.next());
+				emp.setName(sc.next());
 				System.out.print("\nEnter Employee salary : ");
-				emp[j].setSalary(sc.nextInt());
+				emp.setSalary(sc.nextInt());
 				System.out.print("\nEnter Employee age : ");
-				emp[j].setAge(sc.nextInt());
+				emp.setAge(sc.nextInt());
 				sc.nextLine();
 				System.out.println("\nEnter Employee email : ");
-				emp[j].setEmail(sc.nextLine());
+				emp.setEmail(sc.nextLine());
 				System.out.println("Employee successfully updated.");
-				empList.set(j, emp[j]);
+				empList.set(j, emp);
 				break;
 			} else if (empList.get(j).getId() != tempId && j == empList.size() - 1) {
 				System.out.println("Employee does not exists.");
 			}
 		}
-
+		
 	}
 
 	public void deleteEmp(List<Employee> empList) {
+		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter Employee id (To Delete) : ");
 		Integer tempId = sc.nextInt();
 		for (int j = 0; j < empList.size(); j++) {
@@ -114,9 +117,11 @@ public class CrudApplication {
 				System.out.println("Employee does not exists.");
 			}
 		}
+		
 	}
 
 	public void getEmp(List<Employee> empList) {
+		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter Employee id (To get records) : ");
 		Integer tempId = sc.nextInt();
 		for (int j = 0; j < empList.size(); j++) {
@@ -133,6 +138,7 @@ public class CrudApplication {
 			} else if (empList.get(j).getId() != tempId && j == empList.size() - 1)
 				System.out.println("Employee does not exists.");
 		}
+		
 	}
 
 	public void getAllEmp(List<Employee> empList) {
