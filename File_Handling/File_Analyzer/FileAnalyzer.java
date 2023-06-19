@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class FileAnalyzer {
 
 	public static void main(String[] args) {
-		String path = "C:\\Users\\DELL\\eclipse-workspace\\File handling\\src\\tasks\\sample.txt";
+		String path = "sample.txt";
 		analyze(path);
 	}
 	
