@@ -18,7 +18,7 @@ public class CRUD_App {
 	static FileReader fr = null;
 
 	public static void main(String[] args) {
-		File file = new File("C:\\Users\\DELL\\eclipse-workspace\\File handling\\src\\tasks\\employee_data.txt");
+		File file = new File("employee_data.txt");
 
 		CRUD_App crudApp = new CRUD_App();
 		Employee emp = new Employee();
