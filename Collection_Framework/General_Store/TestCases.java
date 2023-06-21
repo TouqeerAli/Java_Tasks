@@ -89,33 +89,33 @@ public class TestCases {
 	 * testEcoFriendlyPlantInfo(String type) { pi.ecoFriendlyInfo(type); }
 	 */
 	public static void main(String[] args) {
-		ClothingProduct cl1 = new ClothingProduct("M", "Organic Cotton", "Green", "Casual");
-		Product pr1 = new Product("Eco T-Shirt", "OrganicWear", 25.99f, "Clothing", true, cl1);
-		ClothingProduct cl2 = new ClothingProduct("M", "Organic Cotton", "Green", "Casual");
-		Product pr2 = new Product("Eco Jeans", "Levi's", 89.99f, "Clothing", true, cl2);
-		SkincareProduct sk1 = new SkincareProduct("Normal", "None", false);
-		Product pr3 = new Product("Shampoo", "Pantene", 8.99f, "Skincare", false, sk1);
-		CleaningProduct cln1 = new CleaningProduct("Multi-Surface", "Lavender", false);
-		Product pr4 = new Product("All-Purpose Cleaner", "Clorox", 4.99f, "Cleaning", false, cln1);
-		ElectronicProduct el1 = new ElectronicProduct("AC", true, true);
-		Product pr5 = new Product("Smart Speaker", "Amazon", 99.99f, "Electronic", false, el1);
-		PlantProduct pl1 = new PlantProduct("Ceramic", "Low", "Succulent");
-		Product pr6 = new Product("Snake Plant", "Plants R Us", 24.99f, "Plant", true, pl1);
-		ClothingProduct cl3 = new ClothingProduct("L", "Cotton", "Black", "Basic");
-		Product pr7 = new Product("T-Shirt", "H&M", 12.99f, "Clothing", false, cl1);
-		SkincareProduct sk2 = new SkincareProduct("Oily", "Acne", false);
-		Product pr8 = new Product("Face Wash", "Neutrogena", 6.99f, "Skincare", false, sk2);
+		ClothingProduct cl1 = new ClothingProduct("M", "Organic Cotton", "Green", "Casual","Eco T-Shirt", "OrganicWear", 25.99f, "Clothing", true);
+
+		ClothingProduct cl2 = new ClothingProduct("M", "Organic Cotton", "Green", "Casual","Eco Jeans", "Levi's", 89.99f, "Clothing", true);
+
+		SkincareProduct sk1 = new SkincareProduct("Normal", "None", false,"Shampoo", "Pantene", 8.99f, "Skincare", false);
+		
+		CleaningProduct cln1 = new CleaningProduct("Multi-Surface", "Lavender", false,"All-Purpose Cleaner", "Clorox", 4.99f, "Cleaning", false);
+
+		ElectronicProduct el1 = new ElectronicProduct("AC", true, true,"Smart Speaker", "Amazon", 99.99f, "Electronic", false);
+
+		PlantProduct pl1 = new PlantProduct("Ceramic", "Low", "Succulent","Snake Plant", "Plants R Us", 24.99f, "Plant", true);
+
+		ClothingProduct cl3 = new ClothingProduct("L", "Cotton", "Black", "Basic","T-Shirt", "H&M", 12.99f, "Clothing", false);
+
+		SkincareProduct sk2 = new SkincareProduct("Oily", "Acne", false,"Face Wash", "Neutrogena", 6.99f, "Skincare", false);
+
 
 		TestCases tc = new TestCases();
-		tc.testAddProduct(pr1);
-		tc.testAddProduct(pr2);
-		tc.testAddProduct(pr3);
-		tc.testAddProduct(pr4);
-		tc.testAddProduct(pr5);
-		tc.testAddProduct(pr6);
-		tc.testAddProduct(pr7);
+		tc.testAddProduct(cl1);
+		tc.testAddProduct(cl2);
+		tc.testAddProduct(sk1);
+		tc.testAddProduct(cln1);
+		tc.testAddProduct(el1);
+		tc.testAddProduct(pl1);
+		tc.testAddProduct(cl3);
 	
-		tc.testRemoveProduct(pr6);
+		tc.testRemoveProduct(pl1);
 		tc.testSearchProductForExitingProduct("Shampoo");
 		tc.testSearchProductForNonExitingProduct("Snake Plant");
 		tc.testPrintInfoOfClothing(cl1);

@@ -11,8 +11,9 @@ public class ElectronicProduct extends Product{
 		this.energyEfficient = false;
 		this.smartHomeCompatible = false;
 	}
-	public ElectronicProduct(String powerSource, Boolean energyEfficient, Boolean smartHomeCompatible) {
-		super();
+	public ElectronicProduct(String powerSource, Boolean energyEfficient, Boolean smartHomeCompatible,
+			String name, String brand, Float price, String type, Boolean eco_friendly) {
+		super(name,  brand,  price,  type,  eco_friendly);
 		this.powerSource = powerSource;
 		this.energyEfficient = energyEfficient;
 		this.smartHomeCompatible = smartHomeCompatible;
@@ -38,6 +39,11 @@ public class ElectronicProduct extends Product{
 	
 	@Override
 	public void print_info() {
+		System.out.println("Name : "+super.getName());
+		System.out.println("Brand : "+super.getBrand());
+		System.out.println("Price : "+super.getPrice());
+		System.out.println("Type : "+super.getType());
+		System.out.println("Eco-friendly : "+super.getEco_friendly());
 		System.out.println("Power Source : "+this.powerSource);
 		System.out.println("Energy Efficient : "+this.energyEfficient);
 		System.out.println("Smart Home Compatible : "+this.smartHomeCompatible);

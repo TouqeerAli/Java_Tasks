@@ -31,15 +31,15 @@ public class ProductInventory {
 				products.get(i).print_info();
 
 				if (products.get(i).getType().equals("Clothing")) {
-					products.get(i).getClothing().print_info();
+					products.get(i).print_info();
 				} else if (products.get(i).getType().equals("Skincare")) {
-					products.get(i).getSkincare().print_info();
+					products.get(i).print_info();
 				} else if (products.get(i).getType().equals("Cleaning")) {
-					products.get(i).getCleaning().print_info();
+					products.get(i).print_info();
 				} else if (products.get(i).getType().equals("Electronic")) {
-					products.get(i).getElectronic().print_info();
+					products.get(i).print_info();
 				} else if (products.get(i).getType().equals("Plant")) {
-					products.get(i).getPlant().print_info();
+					products.get(i).print_info();
 				}
 				return true;
 			} else if (products.get(i).getName().equals(productName) == false && i == products.size() - 1) {

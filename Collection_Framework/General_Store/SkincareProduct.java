@@ -11,8 +11,9 @@ public class SkincareProduct extends Product {
 		this.fragranceFree = false;
 	}
 
-	public SkincareProduct(String skinType, String targetConcerns, Boolean fragranceFree) {
-		super();
+	public SkincareProduct(String skinType, String targetConcerns, Boolean fragranceFree,
+			String name, String brand, Float price, String type, Boolean eco_friendly) {
+		super(name,  brand,  price,  type,  eco_friendly);
 		this.skinType = skinType;
 		this.targetConcerns = targetConcerns;
 		this.fragranceFree = fragranceFree;
@@ -44,6 +45,11 @@ public class SkincareProduct extends Product {
 
 	@Override
 	public void print_info() {
+		System.out.println("Name : "+super.getName());
+		System.out.println("Brand : "+super.getBrand());
+		System.out.println("Price : "+super.getPrice());
+		System.out.println("Type : "+super.getType());
+		System.out.println("Eco-friendly : "+super.getEco_friendly());
 		System.out.println("Skin Type : " + this.skinType);
 		System.out.println("Target Concerns : " + this.targetConcerns);
 		System.out.println("Fragrance Free : " + this.fragranceFree);
